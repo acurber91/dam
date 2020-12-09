@@ -58,7 +58,7 @@ export class DispositivoPage
 			// Obtenemos la medición correspondiente.
 			this._valorObtenido = Number(this._lastMeasurement.valor);
 			
-			// Actualizamos el chart.
+			// Actualizamos el chart. Utilizamos el elvis operand para que no arroje un error.
 			this.myChart?.update({series: [{
 				name: 'kPA',
 				data: [this._valorObtenido],
