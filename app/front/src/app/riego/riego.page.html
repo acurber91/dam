@@ -1,0 +1,40 @@
+<ion-header translucent="true">
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/dispositivo/{{idDispositivo}}"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			Riegos
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	<section *ngIf="!this.noData; else showTable">
+		<ion-grid #showtable>
+			<ion-row>
+				<ion-col style="border-top: 1px solid grey; border-left: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
+					<b>ID</b>
+				</ion-col>
+				<ion-col size="8" style="border-top: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
+					<b>Fecha y hora</b>
+				</ion-col>
+				<ion-col style="border-top: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
+					<b>Valor</b>
+				</ion-col>
+			</ion-row>
+			<ion-row *ngFor="let riego of this.listadoRiego">
+				<ion-col style="border-left: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
+					{{riego.logRiegoId}}
+				</ion-col>
+				<ion-col size="8" style="border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
+					{{riego.fecha | date:'dd/MM/yyyy hh:mm:ss'}}
+				</ion-col>
+				<ion-col style="border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
+					{{riego.apertura}}
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</section>
+</ion-content>
+

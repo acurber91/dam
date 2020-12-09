@@ -1,0 +1,26 @@
+<ion-header translucent="true">
+    <ion-toolbar color="primary">
+        <ion-title>
+            Sensores
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+    <ion-list>
+        <ion-list-header>
+            Huerta
+        </ion-list-header>
+        <ion-item *ngFor="let dispositivo of this.listadoDisp" routerLink="/dispositivo/{{dispositivo.dispositivoId}}" routerDirection="root" detail="true" lines="none">
+            <ion-avatar slot="start">
+                <img src="assets/water.svg">
+            </ion-avatar>
+            <ion-label>
+                <h2>Sensor {{dispositivo.dispositivoId}}</h2>
+                <h3>
+                    <ion-icon name="pin"></ion-icon>{{dispositivo.ubicacion}}
+                </h3>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
