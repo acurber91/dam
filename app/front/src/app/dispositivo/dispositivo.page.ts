@@ -36,7 +36,7 @@ export class DispositivoPage
 	public myChart;
 	private _chartOptions;
       
-    constructor(private router: ActivatedRoute, private measurementService: MedicionService, public deviceService: DispositivoService)
+    constructor(private router: ActivatedRoute, public measurementService: MedicionService, public deviceService: DispositivoService)
     { 
 		// Obtenemos el "id" del sensor en el cual se hizo "click".
 		this.idDispositivo = this.router.snapshot.paramMap.get('id');
@@ -49,7 +49,7 @@ export class DispositivoPage
 			// Y obtenemos el "id" de la electroválvula en cuestión.
 			this.idElectrovalvula = this.dispositivo.electrovalvulaId;
 		});
-
+		
 		// Llamamos al servicio para obtener la última medición. Cuando se cumple la promesa, se actualiza el gráfico.
 		this.measurementService.getMedicion(this.idDispositivo).then((measurement) => {
 			// Guardamos el objeto.
@@ -59,7 +59,7 @@ export class DispositivoPage
 			this._valorObtenido = Number(this._lastMeasurement.valor);
 			
 			// Actualizamos el chart.
-			this.myChart.update({series: [{
+			this.myChart?.update({series: [{
 				name: 'kPA',
 				data: [this._valorObtenido],
 				tooltip: {
