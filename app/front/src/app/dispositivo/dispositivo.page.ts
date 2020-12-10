@@ -79,6 +79,7 @@ export class DispositivoPage
         this.generarChart();
 	}
 	
+	// Funcción para generar el gráfico de Highcharts.
 	generarChart()
 	{
 		this._chartOptions = {
@@ -160,6 +161,7 @@ export class DispositivoPage
 			}
 		});
 		
+		// Generar el gráfico.
 		this.myChart = Highcharts.chart('highcharts', this._chartOptions );
 	}
 }

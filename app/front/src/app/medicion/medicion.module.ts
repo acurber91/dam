@@ -13,7 +13,7 @@ import { MedicionPage } from './medicion.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MedicionPageRoutingModule
+    MedicionPageRoutingModule,
   ],
   declarations: [MedicionPage]
 })
