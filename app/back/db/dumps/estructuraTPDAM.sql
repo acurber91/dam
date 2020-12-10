@@ -29,13 +29,13 @@ CREATE TABLE IF NOT EXISTS `DAM`.`Electrovalvulas` (
 ENGINE = InnoDB;
 
 INSERT INTO `Electrovalvulas` (`electrovalvulaId`, `nombre`) VALUES
-(1, 'Válvula A'),
-(2, 'Válvula B'),
-(3, 'Válvula C'),
-(4, 'Válvula D'),
-(5, 'Válvula E'),
-(6, 'Válvula F'),
-(7, 'Válvula G');
+(1, 'Valvula A'),
+(2, 'Valvula B'),
+(3, 'Valvula C'),
+(4, 'Valvula D'),
+(5, 'Valvula E'),
+(6, 'Valvula F'),
+(7, 'Valvula G');
 
 -- -----------------------------------------------------
 -- Table `DAM`.`Dispositivos`
@@ -61,7 +61,7 @@ INSERT INTO `Dispositivos` (`dispositivoId`, `nombre`, `ubicacion`, `electrovalv
 (2, 'Sensor 2', 'Tomate cherry', '2'),
 (3, 'Sensor 3', 'Lechuga crespa', '3'),
 (4, 'Sensor 4', 'Lechuga romana', '4'),
-(5, 'Sensor 5', 'Rúcula', '5'),
+(5, 'Sensor 5', 'Rucula', '5'),
 (6, 'Sensor 6', 'Albahaca', '6'),
 (7, 'Sensor 7', 'Zapallo', '7');
 
