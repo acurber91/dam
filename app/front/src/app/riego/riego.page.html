@@ -13,24 +13,24 @@
 	<section *ngIf="!this.noData; else showTable">
 		<ion-grid #showtable>
 			<ion-row>
-				<ion-col style="border-top: 1px solid grey; border-left: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
+				<ion-col size="2" style="border-top: 1px solid grey; border-left: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
 					<b>ID</b>
 				</ion-col>
-				<ion-col size="8" style="border-top: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
+				<ion-col size="7" style="border-top: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
 					<b>Fecha y hora</b>
 				</ion-col>
-				<ion-col style="border-top: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
+				<ion-col size="3" style="border-top: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em; background-color: lightgrey;">
 					<b>Valor</b>
 				</ion-col>
 			</ion-row>
 			<ion-row *ngFor="let riego of this.listadoRiego">
-				<ion-col style="border-left: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
+				<ion-col size="2" style="border-left: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
 					{{riego.logRiegoId}}
 				</ion-col>
-				<ion-col size="8" style="border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
+				<ion-col size="7" style="border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
 					{{riego.fecha | date:'dd/MM/yyyy hh:mm:ss'}}
 				</ion-col>
-				<ion-col style="border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
+				<ion-col size="3" style="border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
 					{{riego.apertura | actuador}}
 				</ion-col>
 			</ion-row>
