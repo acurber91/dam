@@ -16,7 +16,14 @@
 			</ion-col>
 			<ion-col size="10">
 				<div>
-					<ion-button expand="block">Abrir electroválvula</ion-button>
+					<ion-button *ngIf="!this.valveState, else closeValve" expand="block" (click)="actionOpenValve()">
+						Abrir electroválvula
+					</ion-button>
+					<ng-template #closeValve>
+						<ion-button expand="block" (click)="actionCloseValve()">
+							Cerrar electroválvula
+						</ion-button>
+					</ng-template>
 				</div>
 			</ion-col>
 			<ion-col>
