@@ -56,28 +56,28 @@ Por otro lado, en cuanto al desarrollo del **"backend"** se utilizó **Express.j
 
 El proyecto se encuentra conformado por la siguiente estructura de directorios y archivos (los más relevantes a la aplicación):
 
-    ├── app                                     # Directorio raíz de la aplicación.
-    │   ├── back                                # Directorio para el backend de la aplicación
-    │   │   ├── db                              # Directorio para los archivos de la BD.
-    │   │   │   ├── data                        # Estructura y datos de la BD.
-    │   │   │   └── dumps                       # Directorio de estructuras de la BD.
-    │   │   │       └── estructuraTPDAM.sql     # Estructura con la BD "estructuraTPDAM".
-    │   │   ├── src                             # Código del backend.
-    │   │   |   ├── mysql                       # Código de conexión de la BD.
-    │   │   |   ├── routes                      # Directorio de rutas a cada tabla de la BD.
-    │   │   |   └── index.js                    # Código base del servidor de Express.
-    │   └── front                               # Directorio para el frontend de la aplicacion
-    │       ├── src/app/directives              # Módulo de directivas personalizadas.
-    │       ├── src/app/dispositivo             # Page correspondiente a la vista de dispositivo.
-    │       ├── src/app/home                    # Page correspondiente a la vista principal.
-    │       ├── src/app/medicion                # Page correspondiente a la vista del registro de mediciones.
-    │       ├── src/app/model                   # Definición de clases personalizadas TypeScipt.
-    │       ├── src/app/riego                   # Page correspondiente a la vista del registro de riegos.
-    │       ├── src/app/pipes                   # Módulo de pipes personalizados.
-    │       └── src/app/services                # Conjunto de servicios personalizados.
-    ├── README.md                               # Archivo actual.
-    ├── CHANGELOG.md                            # Archivo para guardar cambios.
-    └── doc                                     # Documentación general del proyecto.
+    ├── app                                  # Directorio raíz de la aplicación.
+    │   ├── back                             # Directorio para el backend de la aplicación
+    │   │   ├── db                           # Directorio para los archivos de la BD.
+    │   │   │   ├── data                     # Estructura y datos de la BD.
+    │   │   │   └── dumps                    # Directorio de estructuras de la BD.
+    │   │   │       └── estructuraTPDAM.sql  # Estructura con la BD "estructuraTPDAM".
+    │   │   ├── src                          # Código del backend.
+    │   │   |   ├── mysql                    # Código de conexión de la BD.
+    │   │   |   ├── routes                   # Directorio de rutas a cada tabla de la BD.
+    │   │   |   └── index.js                 # Código base del servidor de Express.
+    │   └── front                            # Directorio para el frontend de la aplicacion
+    │       ├── src/app/directives           # Módulo de directivas personalizadas.
+    │       ├── src/app/dispositivo          # Page correspondiente a la vista de dispositivo.
+    │       ├── src/app/home                 # Page correspondiente a la vista principal.
+    │       ├── src/app/medicion             # Page correspondiente a la vista del registro de mediciones.
+    │       ├── src/app/model                # Definición de clases personalizadas TypeScipt.
+    │       ├── src/app/riego                # Page correspondiente a la vista del registro de riegos.
+    │       ├── src/app/pipes                # Módulo de pipes personalizados.
+    │       └── src/app/services             # Conjunto de servicios personalizados.
+    ├── README.md                            # Archivo actual.
+    ├── CHANGELOG.md                         # Archivo para guardar cambios.
+    └── doc                                  # Documentación general del proyecto.
 
 ### Desarrollo del "frontend"
 
