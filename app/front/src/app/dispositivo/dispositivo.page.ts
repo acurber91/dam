@@ -61,7 +61,7 @@ export class DispositivoPage
 		// Llamamos al método encargado de obtener el estado de la electroválvula.
 		this.getValveState();
 		
-		// Llamaamos al método encargado de obtener la medición actual del sensor y mostrarla en el gráfico.
+		// Llamamos al método encargado de obtener la medición actual del sensor y mostrarla en el gráfico.
 		this.getSensorMeasurement();
     }
 
@@ -111,31 +111,51 @@ export class DispositivoPage
 			
 			// Obtenemos la medición correspondiente.
 			this._valorObtenido = Number(this._lastMeasurement.valor);
-			
-			// Actualizamos el chart. Utilizamos el elvis operand para que no arroje un error.
-			this.myChart?.update({series: [{
-				name: 'kPA',
-				data: [this._valorObtenido],
-				tooltip: {
-					valueSuffix: ' kPA'
-				}
-			}]});
+
+			// Llamamos al método encargado de actualizar el gráfico.
+			this.updateChart();
 		});
 	}
 
-	// Método utilizado para abrir la electroválvula,
+	// Método utilizado para abrir la electroválvula.
 	public actionOpenValve()
 	{
-		// Armamos el objeto de tipo Riego para enviarlo al backend.
+		this.valveState = false;
+
+		// Armamos el objeto de tipo Riego para enviarlo al backend a través de un POST.
 		let newSprinkle: Riego = new Riego(1, 1, this.getTimeStamp(), this.idElectrovalvula)
-		// DEBUG
-		let response = this.riegoService.postRiego(newSprinkle);
-		console.log(response);
+		
+		// Enviamos el POST al backend para que actualice la tabla Riego.
+		this.riegoService.postRiego(newSprinkle);
 	}
 
+	// Método utilizado para cerrar la electroválvula.
 	public actionCloseValve()
 	{
-		console.log("Cerrar válvula");
+		this.valveState = true;
+		
+		// Generamos un valor de medición aleatorio. Se supone que al haber estado abierta la electroválvula, 
+		// el suelo estará húmedo, por lo que el valor máximo que puede tomar el valor aleatorio es la última medición
+		// y el mínimo será el máximo menos 5. Como el método .random() arroja un número decimal, lo redondeamos a uno 
+		// entero utilizando la función .round().
+		let randomSensorValue = Math.round(Math.random() * (this._valorObtenido - (this._valorObtenido - 5)) + (this._valorObtenido - 5));
+
+		// Armamos el objeto de tipo Medicion para enviarlo al backend a través de un POST.
+		let newMeasurement: Medicion = new Medicion(1, this.getTimeStamp(), randomSensorValue, this.idElectrovalvula);
+
+		// Enviamos el POST al backend para que actualice la tabla Medición.
+		this.measurementService.postMedicion(newMeasurement);
+		
+		// Armamos el objeto de tipo Riego para enviarlo al backend a través de un POST.
+		let newSprinkle: Riego = new Riego(1, 0, this.getTimeStamp(), this.idElectrovalvula)
+
+		// Enviamos el POST al backend para que actualice la tabla Riego.
+		this.riegoService.postRiego(newSprinkle);
+
+		// Actualizamos el gráfico, llamando de nuevo al método que busca el dato más reciente en el backend 
+		// y actualiza el valor del chart.
+		this.getSensorMeasurement();
+		
 	}
 
 	// Método privado para obtener la fecha y hora actual.
@@ -167,6 +187,20 @@ export class DispositivoPage
 
 		// Y lo retornamos.
 		return(timeStamp);
+	}
+
+	updateChart()
+	{
+		// Actualizamos el chart. Utilizamos el elvis operand para que no arroje un error, ya que 
+		// Angular intenta crear la vista del gráfico antes de que se encuentren disponibles los datos
+		// del mismo.
+		this.myChart?.update({series: [{
+			name: 'kPA',
+			data: [this._valorObtenido],
+			tooltip: {
+				valueSuffix: ' kPA'
+			}
+		}]});
 	}
 
 	// Función para generar el gráfico de Highcharts.

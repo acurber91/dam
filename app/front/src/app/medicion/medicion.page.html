@@ -28,7 +28,7 @@
 					{{medicion.medicionId}}
 				</ion-col>
 				<ion-col size="7" style="border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
-					{{medicion.fecha | date:'dd/MM/yyyy hh:mm:ss'}}
+					{{medicion.fecha | date:'dd/MM/yyyy HH:mm:ss':'z'}}
 				</ion-col>
 				<ion-col size="3" style="border-right: 1px solid grey; border-bottom: 1px solid grey; padding-top: 1em; padding-bottom: 1em;">
 					{{medicion.valor | unit}}
