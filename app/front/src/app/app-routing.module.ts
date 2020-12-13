@@ -12,10 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'listado',
-    loadChildren: () => import('./listado/listado.module').then( m => m.ListadoPageModule)
-  },
-  {
     path: 'dispositivo',
     loadChildren: () => import('./dispositivo/dispositivo.module').then( m => m.DispositivoPageModule)
   },

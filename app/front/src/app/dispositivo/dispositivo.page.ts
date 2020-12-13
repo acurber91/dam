@@ -7,9 +7,10 @@ import { DispositivoService } from '../services/dispositivo.service';
 import { MedicionService } from '../services/medicion.service';
 import { RiegoService } from '../services/riego.service'
 import * as Highcharts from 'highcharts';
-
+declare var require: any;
 require('highcharts/highcharts-more')(Highcharts);
 require('highcharts/modules/solid-gauge')(Highcharts);
+
 
 @Component({
     selector: 'app-dispositivo',
