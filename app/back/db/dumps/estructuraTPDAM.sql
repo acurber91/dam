@@ -29,13 +29,10 @@ CREATE TABLE IF NOT EXISTS `DAM`.`Electrovalvulas` (
 ENGINE = InnoDB;
 
 INSERT INTO `Electrovalvulas` (`electrovalvulaId`, `nombre`) VALUES
-(1, 'Valvula A'),
-(2, 'Valvula B'),
-(3, 'Valvula C'),
-(4, 'Valvula D'),
-(5, 'Valvula E'),
-(6, 'Valvula F'),
-(7, 'Valvula G');
+(1, 'Tomate'),
+(2, 'Lechuga'),
+(3, 'Rúcula'),
+(4, 'Albahaca');
 
 -- -----------------------------------------------------
 -- Table `DAM`.`Dispositivos`
@@ -57,13 +54,10 @@ CREATE TABLE IF NOT EXISTS `DAM`.`Dispositivos` (
 ENGINE = InnoDB;
 
 INSERT INTO `Dispositivos` (`dispositivoId`, `nombre`, `ubicacion`, `electrovalvulaId`) VALUES
-(1, 'Sensor 1', 'Tomate redondo', '1'),
-(2, 'Sensor 2', 'Tomate cherry', '2'),
-(3, 'Sensor 3', 'Lechuga crespa', '3'),
-(4, 'Sensor 4', 'Lechuga romana', '4'),
-(5, 'Sensor 5', 'Rucula', '5'),
-(6, 'Sensor 6', 'Albahaca', '6'),
-(7, 'Sensor 7', 'Zapallo', '7');
+(1, 'Sensor 1', 'Tomate', '1'),
+(2, 'Sensor 2', 'Lechuga', '2'),
+(3, 'Sensor 3', 'Rúcula', '3'),
+(4, 'Sensor 4', 'Albahaca', '4');
 
 -- -----------------------------------------------------
 -- Table `DAM`.`Mediciones`
@@ -88,10 +82,7 @@ INSERT INTO `Mediciones` (`medicionId`, `fecha`, `valor`, `dispositivoId`) VALUE
 (1, '2020-12-09 16:00:00', '51', '1'),
 (2, '2020-12-09 16:00:00', '66', '2'),
 (3, '2020-12-09 16:00:00', '47', '3'),
-(4, '2020-12-09 16:00:00', '38', '4'),
-(5, '2020-12-09 16:00:00', '30', '5'),
-(6, '2020-12-09 16:00:00', '35', '6'),
-(7, '2020-12-09 16:00:00', '70', '7');
+(4, '2020-12-09 16:00:00', '38', '4');
 
 -- -----------------------------------------------------
 -- Table `DAM`.`Log_Riegos`
@@ -116,10 +107,7 @@ INSERT INTO `Log_Riegos` (`logRiegoId`, `apertura`, `fecha`, `electrovalvulaId`)
 (1, '0', '2020-12-09 16:00:00', '1'),
 (2, '0', '2020-12-09 16:00:00', '2'),
 (3, '0', '2020-12-09 14:00:00', '3'),
-(4, '0', '2020-12-09 16:00:00', '4'),
-(5, '0', '2020-12-09 16:00:00', '5'),
-(6, '0', '2020-12-09 16:00:00', '6'),
-(7, '0', '2020-12-09 16:00:00', '7');
+(4, '0', '2020-12-09 16:00:00', '4');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
