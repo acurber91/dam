@@ -34,7 +34,11 @@ Si su computadora cuenta con Node.js instalado, seguramente cuente con el instal
 
     $ npm install -g @ionic/cli
 
-Para más información sobre cómo instalar Ionic con Node.JS, dirigirse a la [documentación oficial](https://ionicframework.com/docs/intro/cli).
+Ya instalado Ionic, esta aplicación hace uso de la biblioteca **Highcharts** para mostrar el gráfico de cada uno de los sensores. Es por eso que seguramente sea necesario instalarlo con el siguiente comando:
+
+    $ npm install highcharts --save
+
+Para más información sobre cómo instalar Ionic con Node.JS, dirigirse a la [documentación oficial](https://ionicframework.com/docs/intro/cli). Por otro lado, para más información sobre Highcharts es posible consultar su [web oficial](https://www.highcharts.com/docs/getting-started/install-from-npm).
 
 ### Node.js no instalado con anterioridad
 
