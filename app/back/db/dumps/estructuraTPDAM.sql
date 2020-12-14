@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 INSERT INTO `Electrovalvulas` (`electrovalvulaId`, `nombre`) VALUES
 (1, 'Tomate'),
 (2, 'Lechuga'),
-(3, 'Rúcula'),
+(3, 'Zapallo'),
 (4, 'Albahaca');
 
 -- -----------------------------------------------------
@@ -56,7 +56,7 @@ ENGINE = InnoDB;
 INSERT INTO `Dispositivos` (`dispositivoId`, `nombre`, `ubicacion`, `electrovalvulaId`) VALUES
 (1, 'Sensor 1', 'Tomate', '1'),
 (2, 'Sensor 2', 'Lechuga', '2'),
-(3, 'Sensor 3', 'Rúcula', '3'),
+(3, 'Sensor 3', 'Zapallo', '3'),
 (4, 'Sensor 4', 'Albahaca', '4');
 
 -- -----------------------------------------------------
